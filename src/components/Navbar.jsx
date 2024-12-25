@@ -1,9 +1,18 @@
 import { FiMenu } from "react-icons/fi";
 import logo from '../assets/logo.png';
 import { Link, NavLink } from "react-router-dom";
+import useAuth from './../hooks/useAuth';
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 
 const Navbar = () => {
+
+    const { user, handleSignOut } = useAuth()
+    console.log(user);
+
+    const handleSignOutBtn = () => {
+        handleSignOut()
+    }
 
 
     const links = <>
@@ -51,32 +60,33 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                    <Link to="/signUp" className="btn text-[16px] rounded-lg">SignUp</Link>
-                    <Link to="/signIn" className="btn bg-[#FD7441] text-[16px] hover:bg-[#4662B2] text-white font-semibold rounded-lg">SignIn</Link>
-                    {/* {
+                    {
                         user?.email ?
-                            <div className="dropdown dropdown-end group">
-                                <div tabIndex={0} role="button" className="btn w-14 btn-ghost btn-circle avatar">
-                                    <div className="w-full rounded-full">
+
+                            <>
+                                <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
+                                    <div tabIndex={0} role="button" className="m-1">
                                         <img
+                                            className="rounded-full w-14"
                                             alt="User Profile"
                                             src={user?.photoURL}
                                         />
                                     </div>
+                                    <div tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                        <li className="text-center text-lg font-semibold">{user?.displayName}</li>
+                                        <li><Link>Create Assignment</Link></li>
+                                        <li><Link>My Attempted Assignments</Link></li>
+                                        <li onClick={handleSignOutBtn} className="text-[#4662B2] text-[16px] font-semibold"><a href=""><FaArrowRightToBracket />
+                                        Logout</a></li>
+                                    </div>
                                 </div>
-                                <div
-                                    tabIndex={0}
-                                    className="menu menu-sm dropdown-content bg-base-100 p-4 rounded-lg z-[1] mt-3 w-52 shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                                    <p className="text-xl font-semibold text-orange-500 mb-4">{user?.displayName}</p>
-                                    <button onClick={handleLogout} className="btn bg-[#28A745] hover:bg-[#37b855] text-white w-full">Logout</button>
-                                </div>
-                            </div>
+                            </>
                             :
                             <>
-                                <Link to="/auth/login" className="bg-[#28A745] hover:bg-[#37b855] text-white px-4 py-2 font-semibold rounded-md">Login</Link>
-                                <Link to="/auth/register" className="bg-[#28A745] hover:bg-[#37b855] text-white px-4 py-2 font-semibold rounded-md hidden sm:block">Register</Link>
+                                <Link to="/signUp" className="btn text-[16px] rounded-lg">SignUp</Link>
+                                <Link to="/signIn" className="btn bg-[#FD7441] text-[16px] hover:bg-[#4662B2] text-white font-semibold rounded-lg">SignIn</Link>
                             </>
-                    } */}
+                    }
 
                 </div>
             </div>

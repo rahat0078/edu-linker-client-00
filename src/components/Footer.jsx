@@ -25,7 +25,7 @@ const Footer = () => {
                         <h4 className='text-lg text-gray-600 font-semibold text-start pb-4'>Drop a message</h4>
                         <div className='flex'>
                             <input type="text" placeholder="Type here" className="input rounded-r-none w-full max-w-xs" />
-                            <button className='btn bg-[#4662B2] text-[16px] hover:bg-[#4662B2] text-white rounded-none font-semibold'>Send</button>
+                            <button className='btn bg-[#4662B2] rounded-r-lg text-[16px] hover:bg-[#4662B2] text-white rounded-none font-semibold'>Send</button>
                         </div>
                     </div>
                 </div>

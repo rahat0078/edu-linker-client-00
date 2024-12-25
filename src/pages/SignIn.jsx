@@ -1,9 +1,26 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false)
+
+    const {googleLogin, } = useAuth()
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then((res) => {
+            console.log(res);
+            // toast.success('Login successfully!');
+            // location?.state ? navigate(location.state.from ) : navigate("/");
+        })
+        .catch((err) =>{
+            // toast.error(`${err.message}`);
+            console.log(err.message);
+        })
+    }
 
     const handleSignIn = e => {
         e.preventDefault();
@@ -46,7 +63,7 @@ const SignIn = () => {
                     </div>
                     <div className="divider">or</div>
                     <div>
-                        <p className="flex items-center gap-4 text-[#FD7E14] hover:text-[#4662B2] border p-3 w-full justify-center cursor-pointer rounded-full">
+                        <p onClick={handleGoogleLogin} className="flex items-center gap-4 text-[#FD7E14] hover:text-[#4662B2] border p-3 w-full justify-center cursor-pointer rounded-full">
                             <FaGoogle></FaGoogle>
                             <span className="text-xl font-bold ">Login With Google</span>
                         </p>

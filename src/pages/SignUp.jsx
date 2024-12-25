@@ -4,6 +4,8 @@ import { FaGoogle } from "react-icons/fa";
 
 const SignUp = () => {
 
+
+
     const handleSignUp = e => {
         e.preventDefault();
         const form = e.target;
