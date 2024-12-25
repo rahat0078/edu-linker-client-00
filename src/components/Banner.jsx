@@ -3,7 +3,7 @@ import groupwork from '../assets/lottie/groupwork.json';
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 py-20 rounded-lg my-12">
+        <div className="hero bg-base-200 py-16 rounded-lg my-12">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="ml-4">
                     <Lottie animationData={groupwork} loop={true} />

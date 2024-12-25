@@ -1,5 +1,5 @@
 import { FiMenu } from "react-icons/fi";
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo.png';
 import { Link, NavLink } from "react-router-dom";
 
 

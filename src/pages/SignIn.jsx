@@ -46,7 +46,7 @@ const SignIn = () => {
                     </div>
                     <div className="divider">or</div>
                     <div>
-                        <p className="flex items-center gap-4 text-[#FD7E14] hover:text-[#4662B2] border p-3 bg-white w-full justify-center cursor-pointer rounded-full">
+                        <p className="flex items-center gap-4 text-[#FD7E14] hover:text-[#4662B2] border p-3 w-full justify-center cursor-pointer rounded-full">
                             <FaGoogle></FaGoogle>
                             <span className="text-xl font-bold ">Login With Google</span>
                         </p>
