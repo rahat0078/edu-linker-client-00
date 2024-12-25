@@ -1,4 +1,4 @@
-import { Link, } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -6,8 +6,9 @@ import auth from "../firebase/firebase.init";
 
 
 const SignUp = () => {
-
     const { googleLogin, signUpUser, userProfileInfo, setUser } = useAuth()
+    const location = useLocation()
+    const navigate = useNavigate()
 
 
 
@@ -15,7 +16,7 @@ const SignUp = () => {
         googleLogin()
             .then(() => {
                 toast.success('Register with google successfully!');
-                // location?.state ? navigate(location.state.from ) : navigate("/");
+                location?.state ? navigate(location.state.from ) : navigate("/");
             })
             .catch(err => {
                 toast.error(`${err.message}`);
@@ -54,7 +55,7 @@ const SignUp = () => {
                 // Manually update the user state
                 setUser({ ...auth.currentUser });
                 toast.success('SignUp successfully')
-                // location?.state ? navigate(location.state.from) : navigate("/");
+                location?.state ? navigate(location.state.from) : navigate("/");
                 form.reset();
 
             })

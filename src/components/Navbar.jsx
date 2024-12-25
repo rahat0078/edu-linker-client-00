@@ -8,7 +8,6 @@ import { FaArrowRightToBracket } from "react-icons/fa6";
 const Navbar = () => {
 
     const { user, handleSignOut } = useAuth()
-    console.log(user);
 
     const handleSignOutBtn = () => {
         handleSignOut()
@@ -32,6 +31,16 @@ const Navbar = () => {
             }>
             Assignments
         </NavLink>
+        {
+            user?.email ? <NavLink to="/pendingAssignments"
+            className={({ isActive }) =>
+                isActive
+                    ? "text-[#FD7441] text-lg font-semibold  p-2 rounded"
+                    : "p-2 text-lg font-semibold hover:text-[#FD7441] hover:underline"
+            }>
+            Pending assignments
+        </NavLink> : ""
+        }
     </>;
 
     return (
@@ -76,8 +85,8 @@ const Navbar = () => {
                                     </div>
                                     <div tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                                         <li className="text-center text-lg font-semibold">{user?.displayName}</li>
-                                        <li><Link>Create Assignment</Link></li>
-                                        <li><Link>My Attempted Assignments</Link></li>
+                                        <li><Link to='/createAssignment'>Create Assignment</Link></li>
+                                        <li><Link to="/myAttemptedAssignment">My Attempted Assignments</Link></li>
                                         <li onClick={handleSignOutBtn} className="text-[#4662B2] text-[16px] font-semibold"><a href=""><FaArrowRightToBracket />
                                             Logout</a></li>
                                     </div>
