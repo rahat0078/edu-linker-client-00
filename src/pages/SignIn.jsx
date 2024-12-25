@@ -2,34 +2,45 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false)
 
-    const {googleLogin, } = useAuth()
+    const { googleLogin, loginUser } = useAuth()
 
 
     const handleGoogleLogin = () => {
         googleLogin()
-        .then((res) => {
-            console.log(res);
-            // toast.success('Login successfully!');
-            // location?.state ? navigate(location.state.from ) : navigate("/");
-        })
-        .catch((err) =>{
-            // toast.error(`${err.message}`);
-            console.log(err.message);
-        })
+            .then((res) => {
+                console.log(res);
+                // toast.success('Login successfully!');
+                // location?.state ? navigate(location.state.from ) : navigate("/");
+            })
+            .catch((err) => {
+                // toast.error(`${err.message}`);
+                console.log(err.message);
+            })
     }
 
-    const handleSignIn = e => {
+    const handleSignIn = (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const email = formData.get("email");
         const password = formData.get("password");
 
-        console.log({ email, password});
+        loginUser(email, password)
+            .then(() => {
+                toast.success('SignIn successfully!');
+                // location?.state ? navigate(location.state.from) : navigate("/");
+                form.reset()
+            })
+            .catch(() => {
+                toast.error(`Invalid email or password`)
+            })
+
+
     }
 
     return (

@@ -66,18 +66,20 @@ const Navbar = () => {
                             <>
                                 <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
                                     <div tabIndex={0} role="button" className="m-1">
-                                        <img
-                                            className="rounded-full w-14"
-                                            alt="User Profile"
-                                            src={user?.photoURL}
-                                        />
+                                        <div className="w-14 h-14">
+                                            <img
+                                                className="rounded-full w-full h-full"
+                                                alt="User Profile"
+                                                src={user?.photoURL}
+                                            />
+                                        </div>
                                     </div>
                                     <div tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                                         <li className="text-center text-lg font-semibold">{user?.displayName}</li>
                                         <li><Link>Create Assignment</Link></li>
                                         <li><Link>My Attempted Assignments</Link></li>
                                         <li onClick={handleSignOutBtn} className="text-[#4662B2] text-[16px] font-semibold"><a href=""><FaArrowRightToBracket />
-                                        Logout</a></li>
+                                            Logout</a></li>
                                     </div>
                                 </div>
                             </>

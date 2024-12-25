@@ -1,10 +1,26 @@
 import { Link, } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
+import auth from "../firebase/firebase.init";
 
 
 const SignUp = () => {
 
+    const { googleLogin, signUpUser, userProfileInfo, setUser } = useAuth()
 
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                toast.success('Register with google successfully!');
+                // location?.state ? navigate(location.state.from ) : navigate("/");
+            })
+            .catch(err => {
+                toast.error(`${err.message}`);
+            })
+    }
 
     const handleSignUp = e => {
         e.preventDefault();
@@ -16,7 +32,36 @@ const SignUp = () => {
         const photo = formData.get("photo");
         const password = formData.get("password");
 
-        console.log({name, email, photo, password});
+        const uppercase = /^(?=.*[A-Z]).*$/;
+        const lowercase = /^(?=.*[a-z]).*$/;
+
+
+        if (password.length < 6) {
+            return toast.error("Password must be at least 6 character")
+        }
+        if (!uppercase.test(password)) {
+            return toast.error("Must be and uppercase")
+        }
+        if (!lowercase.test(password)) {
+            return toast.error("Must be and lowercase")
+        }
+
+        signUpUser(email, password)
+            .then(() => {
+                return userProfileInfo(name, photo);
+            })
+            .then(() => {
+                // Manually update the user state
+                setUser({ ...auth.currentUser });
+                toast.success('SignUp successfully')
+                // location?.state ? navigate(location.state.from) : navigate("/");
+                form.reset();
+
+            })
+            .catch((err) => {
+                toast.error(`${err.message}`);
+                console.log(err.message);
+            });
     }
 
     return (
@@ -57,7 +102,7 @@ const SignUp = () => {
                     <div className="divider">or</div>
 
                     <div>
-                        <p className="flex items-center gap-4 border p-3  text-[#FD7E14] hover:text-[#4662B2] w-full justify-center rounded-full cursor-pointer">
+                        <p onClick={handleGoogleLogin} className="flex items-center gap-4 border p-3  text-[#FD7E14] hover:text-[#4662B2] w-full justify-center rounded-full cursor-pointer">
                             <FaGoogle></FaGoogle>
                             <span className="text-xl font-semibold">SignIn With Google</span>
                         </p>

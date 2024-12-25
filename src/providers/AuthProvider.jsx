@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, GoogleProvider)
     }
 
-    const registerUser = (email, password) => {
+    const signUpUser = (email, password) => {
 
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -72,7 +72,7 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         handleSignOut,
-        registerUser,
+        signUpUser,
         userProfileInfo,
         loginUser,
         loading
