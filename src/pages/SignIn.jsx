@@ -36,7 +36,7 @@ const SignIn = () => {
         loginUser(email, password)
             .then(() => {
                 toast.success('SignIn successfully!');
-                // location?.state ? navigate(location.state.from) : navigate("/");
+                location?.state ? navigate(location.state.from) : navigate("/");
                 form.reset()
             })
             .catch(() => {
