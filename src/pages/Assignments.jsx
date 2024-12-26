@@ -1,19 +1,30 @@
 import axios from 'axios';
-import { FaEdit, FaEye, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaEye, FaSearch, FaTrashAlt } from 'react-icons/fa';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Assignments = () => {
-    const data = useLoaderData()
-    const [assignments, setAssignments] = useState(data)
+    const [assignments, setAssignments] = useState([])
     const { user } = useAuth()
     const navigate = useNavigate()
+    const [filter, setFilter] = useState('')
+    const [search, setSearch] = useState("")
+
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/assignments?filter=${filter==="All"? "": filter}&search=${search}`)
+        .then(res => {
+            setAssignments(res.data)
+        })
+    }, [filter, search])
+
+    
 
     const handleDelete = (id) => {
 
-        if(!user){
+        if (!user) {
             return navigate('/signIn')
         }
 
@@ -55,14 +66,35 @@ const Assignments = () => {
     }
 
 
-
-
-
     return (
         <div className='container mx-auto'>
             <div className='text-center my-12'>
                 <h2 className='text-3xl font-semibold'>Collaborate and Learn Together</h2>
                 <p className='text-gray-500 w-full max-w-3xl mx-auto py-6 border-b'>Explore all assignments created by your peers. Stay on top of your learning journey by engaging with tasks, completing challenges, and reviewing the work of others. Collaborate, grow, and excel as a community!</p>
+                <div>
+                    <div className='my-8 flex justify-center items-center flex-wrap gap-4'>
+
+                        <div className="relative w-full max-w-xs">
+                            <input
+                                onChange={e => setSearch(e.target.value)}
+                                type="text"
+                                placeholder="Search"
+                                className="input input-bordered w-full pr-10"
+                            />
+                            <button className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-500">
+                                <FaSearch />
+                            </button>
+                        </div>
+                        
+                        <select onChange={e => setFilter(e.target.value)} placeholder="Filter" className="select select-bordered w-full max-w-xs">
+                            <option>All</option>
+                            <option>easy</option>
+                            <option>medium</option>
+                            <option>hard</option>
+                        </select>
+
+                    </div>
+                </div>
             </div>
             <div className='mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 md:px-0'>
                 {assignments.map((assignment) => (
