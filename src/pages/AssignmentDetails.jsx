@@ -15,8 +15,6 @@ const AssignmentDetails = () => {
             })
     }, [id]);
 
-    console.log(assignment);
-
     return (
         <div className='container mx-auto'>
             {assignment ? (
@@ -39,7 +37,7 @@ const AssignmentDetails = () => {
                             <strong>Due Date:</strong> {new Date(assignment.dueDate).toLocaleDateString()}
                         </p>
                         <p className="my-2">
-                            <strong>Created By:</strong>{assignment.createdBy.email}
+                            <strong>Created By: </strong>{assignment.createdBy.name} | {assignment.createdBy.email}
                         </p>
                         <div className='flex justify-end'>
                             <button className='btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg '>Take assignment</button>
