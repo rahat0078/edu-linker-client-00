@@ -9,6 +9,9 @@ const AssignmentDetails = () => {
     const { id } = useParams();
     const [assignment, setAssignment] = useState(null);
     const { user } = useAuth()
+    const title = assignment?.title;
+    const marks = assignment?.marks;
+
 
 
     useEffect(() => {
@@ -30,7 +33,8 @@ const AssignmentDetails = () => {
         const formData = new FormData(form);
         const googleDocsLink = formData.get("googleDocsLink");
         const quickNote = formData.get("quickNote");
-        const examineeName = user?.displayName
+        const examineeName = user?.displayName;
+
 
         const submission = { googleDocsLink, quickNote, examineeName, }
         const assignment = {

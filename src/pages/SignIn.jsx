@@ -15,14 +15,12 @@ const SignIn = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then((res) => {
-                console.log(res);
+            .then(() => {
                 toast.success('Login successfully!');
                 location?.state ? navigate(location.state.from ) : navigate("/");
             })
             .catch((err) => {
                 toast.error(`${err.message}`);
-                console.log(err.message);
             })
     }
 
