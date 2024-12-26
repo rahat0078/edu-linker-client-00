@@ -8,6 +8,7 @@ import MyAttemptedjAssignments from "../pages/MyAttemptedjAssignments";
 import PendingAssignments from "../pages/PendingAssignments";
 import Assignments from './../pages/Assignments';
 import PrivateRoute from "../private/PrivateRoute";
+import AssignmentDetails from "../pages/AssignmentDetails";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,12 @@ const router = createBrowserRouter([
             {
                 path: '/assignments',
                 element: <Assignments />
+            },
+            {
+                path: '/assignmentDetails/:id',
+                element: <PrivateRoute>
+                    <AssignmentDetails></AssignmentDetails>
+                </PrivateRoute>
             },
             {
                 path: '/createAssignment',

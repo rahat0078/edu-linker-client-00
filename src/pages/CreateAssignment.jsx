@@ -38,7 +38,7 @@ const CreateAssignment = () => {
 
     axios.post('http://localhost:5000/create-assignment', assignment)
       .then(data => {
-        console.log(data.data)
+
         if (data.data.insertedId) {
           Swal.fire({
             title: "Success!",
