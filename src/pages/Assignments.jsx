@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { FaEdit, FaEye, FaTrashAlt } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
@@ -9,9 +9,13 @@ const Assignments = () => {
     const data = useLoaderData()
     const [assignments, setAssignments] = useState(data)
     const { user } = useAuth()
-    console.log(user?.email);
+    const navigate = useNavigate()
 
     const handleDelete = (id) => {
+
+        if(!user){
+            return navigate('/signIn')
+        }
 
         Swal.fire({
             title: "Are you sure?",
@@ -44,12 +48,12 @@ const Assignments = () => {
 
                     })
                     .catch((error) => {
-                        console.error("Error deleting assignment:", error);
-                        alert("Failed to delete the assignment. Please try again.");
+                        console.error("Error deleting assignment:", error.message);
                     });
             }
         });
     }
+
 
 
 
@@ -110,9 +114,9 @@ const Assignments = () => {
                                 <Link to={`/assignmentDetails/${assignment._id}`} className="btn btn-sm btn-outline text-blue-600">
                                     <FaEye className="mr-2" /> View
                                 </Link>
-                                <button className="btn btn-sm btn-outline text-yellow-500">
+                                <Link to={`/update/${assignment._id}`} className="btn btn-sm btn-outline text-yellow-500">
                                     <FaEdit className="mr-2" /> Update
-                                </button>
+                                </Link>
                                 <button onClick={() => handleDelete(assignment._id)} className="btn btn-sm btn-outline text-red-600">
                                     <FaTrashAlt className="mr-2" /> Delete
                                 </button>

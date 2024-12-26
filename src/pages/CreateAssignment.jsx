@@ -11,7 +11,6 @@ const CreateAssignment = () => {
   const { user } = useAuth()
 
   const [startDate, setStartDate] = useState(new Date());
-  const date = startDate
 
 
 
