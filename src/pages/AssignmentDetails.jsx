@@ -16,7 +16,7 @@ const AssignmentDetails = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/assignment/${id}`)
+            .get(`https://edu-linker-server.vercel.app/assignment/${id}`)
             .then((response) => {
                 setAssignment(response.data);
             })
@@ -43,7 +43,7 @@ const AssignmentDetails = () => {
         }
 
 
-        axios.post(`http://localhost:5000/submit-assignment/${user?.email}`, assignment, {withCredentials: true})
+        axios.post(`https://edu-linker-server.vercel.app/submit-assignment/${user?.email}`, assignment, {withCredentials: true})
             .then(res => {
                 if (res.data.data.insertedId) {
                     Swal.fire({

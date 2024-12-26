@@ -12,7 +12,7 @@ const PendingAssignments = () => {
     const [assignmentInfo, setassignmentInfo] = useState();
 
     useEffect(() => {
-        axios.get("http://localhost:5000/pending-assignments",  {withCredentials: true})
+        axios.get("https://edu-linker-server.vercel.app/pending-assignments",  {withCredentials: true})
             .then(res =>{
                  setpendingAssignments(res?.data?.data)
                 setReload(false);
@@ -34,7 +34,7 @@ const PendingAssignments = () => {
         const feedBack = formData.get("feedback");
 
         // post data
-        axios.patch(`http://localhost:5000/assgnment-mark/${user?.email}/${assignmentInfo?._id}`, {
+        axios.patch(`https://edu-linker-server.vercel.app/assgnment-mark/${user?.email}/${assignmentInfo?._id}`, {
             mark, feedBack
         }, {withCredentials: true})
             .then(res => {

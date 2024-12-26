@@ -35,7 +35,7 @@ const CreateAssignment = () => {
     }
 
 
-    axios.post('http://localhost:5000/create-assignment', assignment, {withCredentials: true})
+    axios.post('https://edu-linker-server.vercel.app/create-assignment', assignment, {withCredentials: true})
       .then(data => {
 
         if (data.data.insertedId) {

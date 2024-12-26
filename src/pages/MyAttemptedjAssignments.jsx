@@ -10,7 +10,7 @@ const MyAttemptedjAssignments = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/user-assignments/${user?.email}` , {withCredentials: true})
+        axios.get(`https://edu-linker-server.vercel.app/user-assignments/${user?.email}` , {withCredentials: true})
             .then(res => {
                 setAssignments(res.data.data);
             })

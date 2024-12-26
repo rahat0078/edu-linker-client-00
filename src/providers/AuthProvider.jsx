@@ -78,7 +78,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const user = { email: currentUser.email };
                 console.log(user);
-                axios.post('http://localhost:5000/jwt', user, {
+                axios.post('https://edu-linker-server.vercel.app/jwt', user, {
                     withCredentials: true
                 })
                     .then(data => {
@@ -88,7 +88,7 @@ const AuthProvider = ({ children }) => {
 
             }
             else {
-                axios.post('http://localhost:5000/logout', {}, { withCredentials: true })
+                axios.post('https://edu-linker-server.vercel.app/logout', {}, { withCredentials: true })
                     .then(data => {
                         console.log(data.data, 'logout')
                         setLoading(false)

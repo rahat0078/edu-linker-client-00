@@ -14,7 +14,7 @@ const Assignments = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments?filter=${filter==="All"? "": filter}&search=${search}` , {withCredentials: true})
+        axios.get(`https://edu-linker-server.vercel.app/assignments?filter=${filter==="All"? "": filter}&search=${search}` , {withCredentials: true})
         .then(res => {
             setAssignments(res.data)
         })
@@ -38,7 +38,7 @@ const Assignments = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/delete-assignment/${user.email}/${id}`, {withCredentials: true})
+                axios.delete(`https://edu-linker-server.vercel.app/delete-assignment/${user.email}/${id}`, {withCredentials: true})
                     .then((response) => {
                         if (response.data.success) {
                             Swal.fire({

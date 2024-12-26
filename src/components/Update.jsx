@@ -30,7 +30,7 @@ const Update = () => {
             title, description, marks, thumbnail, difficulty, dueDate,
         }
 
-        axios.put(`http://localhost:5000/update-assignment/${user?.email}/${_id}`, assignment, {withCredentials: true})
+        axios.put(`https://edu-linker-server.vercel.app/update-assignment/${user?.email}/${_id}`, assignment, {withCredentials: true})
             .then((response) => {
                 if (response.data.success) {
                     Swal.fire({

@@ -1,8 +1,29 @@
-# EduLinker
+# EduLinker -Online Group Study Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application for collaborative group study, where friends can create, submit, and grade assignments.
 
-Currently, two official plugins are available:
+## Purpose
+- Facilitate group study collaboration.
+- Enable assignment creation, submission, and grading.
+- Showcase technical skills with a responsive and secure design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
+[https://edu-linker-f8e89.web.app/](#) 
+
+## Key Features
+- **Authentication:** Email/password login, Google/GitHub social login.
+- **Assignment Management:** Create, view, update, delete, and filter assignments.
+- **Submission & Grading:** Submit assignments, view pending submissions, and grade assignments.
+- **Responsive Design:** Fully functional on mobile, tablet, and desktop.
+- **Theme Toggling:** Switch between light and dark modes.
+
+## Technology Stack
+- **Client:** React.js, Tailwind CSS, Firebase, React-Datepicker
+- **Server:** Node.js, Express.js, MongoDB, JWT
+
+## Deployment
+- **Client:** Hosted on Firebase.
+- **Server:** Hosted on Vercel.
+
+## Author
+Developed by [Ruhul Amin Rahat].
