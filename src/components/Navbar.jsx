@@ -3,11 +3,27 @@ import logo from '../assets/logo.png';
 import { Link, NavLink } from "react-router-dom";
 import useAuth from './../hooks/useAuth';
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 
 const Navbar = () => {
 
     const { user, handleSignOut } = useAuth()
+    
+        const [theme, setTheme] = useState(
+            localStorage.getItem("isDark") === "true" // Initialize from localStorage
+        )
+
+    // Apply the theme on mount and when theme changes
+    useEffect(() => {
+        if (theme) {
+            document.documentElement.setAttribute("data-theme", "synthwave");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+        localStorage.setItem("isDark", theme); // Persist theme preference
+    }, [theme]);
 
     const handleSignOutBtn = () => {
         handleSignOut()
@@ -33,13 +49,13 @@ const Navbar = () => {
         </NavLink>
         {
             user?.email ? <NavLink to="/pendingAssignments"
-            className={({ isActive }) =>
-                isActive
-                    ? "text-[#FD7441] text-lg font-semibold  p-2 rounded"
-                    : "p-2 text-lg font-semibold hover:text-[#FD7441] hover:underline"
-            }>
-            Pending assignments
-        </NavLink> : ""
+                className={({ isActive }) =>
+                    isActive
+                        ? "text-[#FD7441] text-lg font-semibold  p-2 rounded"
+                        : "p-2 text-lg font-semibold hover:text-[#FD7441] hover:underline"
+                }>
+                Pending assignments
+            </NavLink> : ""
         }
     </>;
 
@@ -69,6 +85,27 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
+
+
+
+
+                    <label className="swap swap-rotate">
+                        {/* Checkbox to toggle theme */}
+                        <input
+                            type="checkbox"
+                            checked={theme}
+                            onChange={() => setTheme(!theme)}
+                        />
+
+                        {/* Sun Icon */}
+                        <FaSun className="swap-off h-10 w-10 fill-current text-yellow-500" />
+
+                        {/* Moon Icon */}
+                        <FaMoon className="swap-on h-10 w-10 fill-current text-blue-500" />
+                    </label>
+
+
+
                     {
                         user?.email ?
 

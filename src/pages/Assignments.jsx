@@ -14,7 +14,7 @@ const Assignments = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignments?filter=${filter==="All"? "": filter}&search=${search}`)
+        axios.get(`http://localhost:5000/assignments?filter=${filter==="All"? "": filter}&search=${search}` , {withCredentials: true})
         .then(res => {
             setAssignments(res.data)
         })
@@ -38,7 +38,7 @@ const Assignments = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/delete-assignment/${user.email}/${id}`)
+                axios.delete(`http://localhost:5000/delete-assignment/${user.email}/${id}`, {withCredentials: true})
                     .then((response) => {
                         if (response.data.success) {
                             Swal.fire({

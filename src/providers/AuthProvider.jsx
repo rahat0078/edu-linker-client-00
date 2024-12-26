@@ -10,6 +10,7 @@ import {
     signOut,
     updateProfile
 } from "firebase/auth";
+import axios from "axios";
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
@@ -49,6 +50,22 @@ const AuthProvider = ({ children }) => {
     }
 
 
+    // useEffect(() => {
+    //     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    // if (currentUser) {
+    //     setUser(currentUser)
+    // } else {
+    //     setUser(null)
+    // }
+    // setLoading(false)
+    //     });
+
+    //     return () => {
+    //         unsubscribe();
+    //     };
+    // }, []);
+
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
@@ -57,14 +74,31 @@ const AuthProvider = ({ children }) => {
                 setUser(null)
             }
             setLoading(false)
-        });
 
-        return () => {
-            unsubscribe();
-        };
-    }, []);
+            if (currentUser?.email) {
+                const user = { email: currentUser.email };
+                console.log(user);
+                axios.post('http://localhost:5000/jwt', user, {
+                    withCredentials: true
+                })
+                    .then(data => {
+                        console.log(data.data)
+                        setLoading(false)
+                    })
 
-   
+            }
+            else {
+                axios.post('http://localhost:5000/logout', {}, { withCredentials: true })
+                    .then(data => {
+                        console.log(data.data, 'logout')
+                        setLoading(false)
+                    })
+            }
+        })
+        return () => unsubscribe()
+    }, [])
+
+
 
 
     const authInfo = {

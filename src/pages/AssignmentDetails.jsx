@@ -43,7 +43,7 @@ const AssignmentDetails = () => {
         }
 
 
-        axios.post(`http://localhost:5000/submit-assignment/${user?.email}`, assignment)
+        axios.post(`http://localhost:5000/submit-assignment/${user?.email}`, assignment, {withCredentials: true})
             .then(res => {
                 if (res.data.data.insertedId) {
                     Swal.fire({

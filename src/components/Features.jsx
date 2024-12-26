@@ -40,7 +40,7 @@ function Features() {
               className={`p-6 ${feature.backgroundColor} shadow hover:scale-105 duration-300 ease-in-out rounded-xl`}
             >
               <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <h3 className="text-lg font-semibold text-black mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}

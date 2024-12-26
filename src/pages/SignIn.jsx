@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -15,7 +16,7 @@ const SignIn = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(() => {
+            .then((result) => {
                 toast.success('Login successfully!');
                 location?.state ? navigate(location.state.from ) : navigate("/");
             })
