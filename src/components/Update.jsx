@@ -58,7 +58,7 @@ const Update = () => {
 
     return (
         <div className="container mx-auto my-12">
-            <form onSubmit={handleUpdate} className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8 space-y-2 border-t-2 border-t-[#4662B2]">
+            <form onSubmit={handleUpdate} className="max-w-lg mx-auto  shadow-md rounded-lg p-8 space-y-2 border-t-2 border-t-[#4662B2]">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
                     Update Assignment
                 </h2>

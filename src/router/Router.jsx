@@ -10,11 +10,13 @@ import Assignments from './../pages/Assignments';
 import PrivateRoute from "../private/PrivateRoute";
 import AssignmentDetails from "../pages/AssignmentDetails";
 import Update from "../components/Update";
+import Error from "../error/Error";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',

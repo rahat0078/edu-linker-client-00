@@ -58,7 +58,7 @@ const CreateAssignment = () => {
 
   return (
     <div className="container mx-auto my-12">
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8 space-y-2 border-t-2 border-t-[#4662B2]">
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-md rounded-lg p-8 space-y-2 border-t-2 border-t-[#4662B2]">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
           Create Assignment
         </h2>
