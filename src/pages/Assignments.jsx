@@ -4,9 +4,11 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
+import loadingSpinner from '../assets/loading.gif';
 
 const Assignments = () => {
     const [assignments, setAssignments] = useState([])
+    const [loading, setLoading] = useState(true)
     const { user } = useAuth()
     const navigate = useNavigate()
     const [filter, setFilter] = useState('')
@@ -14,13 +16,14 @@ const Assignments = () => {
 
 
     useEffect(() => {
-        axios.get(`https://edu-linker-server.vercel.app/assignments?filter=${filter==="All"? "": filter}&search=${search}` , {withCredentials: true})
-        .then(res => {
-            setAssignments(res.data)
-        })
+        axios.get(`https://edu-linker-server.vercel.app/assignments?filter=${filter === "All" ? "" : filter}&search=${search}`, { withCredentials: true })
+            .then(res => {
+                setAssignments(res.data)
+                setLoading(false)
+            })
     }, [filter, search])
 
-    
+
 
     const handleDelete = (id) => {
 
@@ -38,7 +41,7 @@ const Assignments = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://edu-linker-server.vercel.app/delete-assignment/${user.email}/${id}`, {withCredentials: true})
+                axios.delete(`https://edu-linker-server.vercel.app/delete-assignment/${user.email}/${id}`, { withCredentials: true })
                     .then((response) => {
                         if (response.data.success) {
                             Swal.fire({
@@ -66,6 +69,15 @@ const Assignments = () => {
     }
 
 
+    if (loading) {
+        return <>
+            <div className='flex justify-center items-center min-h-screen'>
+                <img src={loadingSpinner} alt="" />
+            </div>
+        </>
+    }
+
+
     return (
         <div className='container mx-auto'>
             <div className='text-center my-12'>
@@ -85,7 +97,7 @@ const Assignments = () => {
                                 <FaSearch />
                             </button>
                         </div>
-                        
+
                         <select onChange={e => setFilter(e.target.value)} placeholder="Filter" className="select select-bordered w-full max-w-xs">
                             <option>All</option>
                             <option>easy</option>

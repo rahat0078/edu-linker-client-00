@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
+import loadingSpinner from '../assets/loading.gif';
 
 const AssignmentDetails = () => {
 
     const { id } = useParams();
     const [assignment, setAssignment] = useState(null);
+    const [loading, setLoading] = useState(true)
     const { user } = useAuth()
     const title = assignment?.title;
     const marks = assignment?.marks;
@@ -19,6 +21,7 @@ const AssignmentDetails = () => {
             .get(`https://edu-linker-server.vercel.app/assignment/${id}`)
             .then((response) => {
                 setAssignment(response.data);
+                setLoading(false)
             })
     }, [id]);
 
@@ -43,7 +46,7 @@ const AssignmentDetails = () => {
         }
 
 
-        axios.post(`https://edu-linker-server.vercel.app/submit-assignment/${user?.email}`, assignment, {withCredentials: true})
+        axios.post(`https://edu-linker-server.vercel.app/submit-assignment/${user?.email}`, assignment, { withCredentials: true })
             .then(res => {
                 if (res.data.data.insertedId) {
                     Swal.fire({
@@ -61,6 +64,14 @@ const AssignmentDetails = () => {
                 console.log(err.message);
             })
 
+    }
+
+    if (loading) {
+        return <>
+            <div className='flex justify-center items-center min-h-screen'>
+                <img src={loadingSpinner} alt="" />
+            </div>
+        </>
     }
 
     return (
@@ -117,7 +128,7 @@ const AssignmentDetails = () => {
                         </div>
                         <div className='flex justify-center mt-6'>
                             <input type='submit' value="Take" className='btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg ' />
-                            <button onClick={() => document.getElementById("my_modal_5").close()} className="btn ml-4">Close</button>
+                            <p onClick={() => document.getElementById("my_modal_5").close()} className="btn ml-4">Close</p>
                         </div>
                     </form>
                 </div>

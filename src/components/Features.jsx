@@ -29,10 +29,10 @@ function Features() {
   ];
 
   return (
-    <section className="py-12 my-12">
+    <section id="features" className="py-16">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6
+        <h2 className="text-3xl font-bold mb-10">Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6
         ">
           {features.map((feature, index) => (
             <div

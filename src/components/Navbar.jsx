@@ -10,10 +10,10 @@ import { FaSun, FaMoon } from "react-icons/fa";
 const Navbar = () => {
 
     const { user, handleSignOut } = useAuth()
-    
-        const [theme, setTheme] = useState(
-            localStorage.getItem("isDark") === "true" // Initialize from localStorage
-        )
+
+    const [theme, setTheme] = useState(
+        localStorage.getItem("isDark") === "true" // Initialize from localStorage
+    )
 
     // Apply the theme on mount and when theme changes
     useEffect(() => {
@@ -63,19 +63,9 @@ const Navbar = () => {
         <div className="bg-base-100 sticky top-0 z-50">
             <div className="navbar container mx-auto py-4">
                 <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <FiMenu />
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow`}>
-                            {links}
-                        </ul>
-                    </div>
                     <Link to="/" className="cursor-pointer flex items-center gap-2 p-2 rounded border">
                         <img className="sm:w-10 w-6 h-full" src={logo} alt="" />
-                        <a className="md:text-xl text-[18px] font-bold">EduLinker</a>
+                        <span className="md:text-xl text-[18px] font-bold">EduLinker</span>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -88,7 +78,6 @@ const Navbar = () => {
 
 
 
-
                     <label className="swap swap-rotate">
                         {/* Checkbox to toggle theme */}
                         <input
@@ -98,13 +87,11 @@ const Navbar = () => {
                         />
 
                         {/* Sun Icon */}
-                        <FaSun className="swap-off h-10 w-10 fill-current text-yellow-500" />
+                        <FaSun className="swap-off h-8 w-8 fill-current text-yellow-500" />
 
                         {/* Moon Icon */}
-                        <FaMoon className="swap-on h-10 w-10 fill-current text-blue-500" />
+                        <FaMoon className="swap-on h-8 w-8 fill-current text-blue-500" />
                     </label>
-
-
 
                     {
                         user?.email ?
@@ -131,9 +118,21 @@ const Navbar = () => {
                             </>
                             :
                             <>
-                                <Link to="/signIn" className="btn bg-[#FD7441] text-[16px] hover:bg-[#4662B2] text-white font-semibold rounded-lg">SignIn</Link>
+                                <Link to="/signIn" className="btn btn-sm md:btn-md bg-[#FD7441] hover:bg-[#4662B2] text-white font-semibold">SignIn</Link>
                             </>
                     }
+
+
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <FiMenu />
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 right-0 p-2 shadow`}>
+                            {links}
+                        </ul>
+                    </div>
 
                 </div>
             </div>

@@ -77,12 +77,10 @@ const AuthProvider = ({ children }) => {
 
             if (currentUser?.email) {
                 const user = { email: currentUser.email };
-                console.log(user);
                 axios.post('https://edu-linker-server.vercel.app/jwt', user, {
                     withCredentials: true
                 })
                     .then(data => {
-                        console.log(data.data)
                         setLoading(false)
                     })
 

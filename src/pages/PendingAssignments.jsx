@@ -3,23 +3,27 @@ import { useEffect, useState } from "react";
 import { FaStar } from 'react-icons/fa'; // React icon for the "Give Mark" button
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import loadingSpinner from '../assets/loading.gif';
+import { flushSync } from "react-dom";
 
 
 const PendingAssignments = () => {
     const { user } = useAuth();
-    const [reload,setReload] = useState(false);
+    const [reload, setReload] = useState(false);
     const [pendingAssignments, setpendingAssignments] = useState();
     const [assignmentInfo, setassignmentInfo] = useState();
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get("https://edu-linker-server.vercel.app/pending-assignments",  {withCredentials: true})
-            .then(res =>{
-                 setpendingAssignments(res?.data?.data)
+        axios.get("https://edu-linker-server.vercel.app/pending-assignments", { withCredentials: true })
+            .then(res => {
+                setpendingAssignments(res?.data?.data)
                 setReload(false);
-                })
+                setLoading(false)
+            })
     }, [reload])
-    console.log(pendingAssignments);
 
+    
     const handlegivemark = (dt) => {
         document.getElementById('my_modal_6').showModal()
         setassignmentInfo(dt)
@@ -36,7 +40,7 @@ const PendingAssignments = () => {
         // post data
         axios.patch(`https://edu-linker-server.vercel.app/assgnment-mark/${user?.email}/${assignmentInfo?._id}`, {
             mark, feedBack
-        }, {withCredentials: true})
+        }, { withCredentials: true })
             .then(res => {
                 if (res.data.success) {
                     Swal.fire({
@@ -48,8 +52,18 @@ const PendingAssignments = () => {
                     });
                     setReload(true);
                     document.getElementById("my_modal_6").close()
+                    form.reset()
                 }
             })
+    }
+
+
+    if (loading) {
+        return <>
+            <div className='flex justify-center items-center min-h-screen'>
+                <img src={loadingSpinner} alt="" />
+            </div>
+        </>
     }
 
     return (
@@ -78,7 +92,7 @@ const PendingAssignments = () => {
                                     {/* Button to "Give Mark" */}
                                     <button
                                         onClick={() => handlegivemark(assignment)}
-                                        className="btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg flex items-center gap-2"
+                                        className="btn btn-sm bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg flex items-center gap-2"
                                     >
                                         <FaStar />
                                         Give Mark
@@ -93,12 +107,12 @@ const PendingAssignments = () => {
                         <form onSubmit={handleGiveMarkSubmit}>
                             <h2>Submitted Info</h2>
                             <div>
-                                <span>Google Doc Link</span>
-                                <a className="hover:text-blue-500" href={assignmentInfo?.submission?.googleDocsLink}>{assignmentInfo?.submission?.googleDocsLink}</a>
+                                <span className="text-lg font-semibold">Google Doc Link: </span>
+                                <a className="hover:text-blue-500 underline" href={assignmentInfo?.submission?.googleDocsLink}>{assignmentInfo?.submission?.googleDocsLink}</a>
 
-
-                                <span>Exameen Note</span>
-                                <p>
+                                <br />
+                                <span className="text-lg font-semibold">Exameen Note:</span>
+                                <p className="text-gray-500">
                                     {
                                         assignmentInfo?.submission?.quickNote
                                     }
