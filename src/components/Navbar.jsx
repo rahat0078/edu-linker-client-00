@@ -131,7 +131,6 @@ const Navbar = () => {
                             </>
                             :
                             <>
-                                <Link to="/signUp" className="btn text-[16px] rounded-lg">SignUp</Link>
                                 <Link to="/signIn" className="btn bg-[#FD7441] text-[16px] hover:bg-[#4662B2] text-white font-semibold rounded-lg">SignIn</Link>
                             </>
                     }
