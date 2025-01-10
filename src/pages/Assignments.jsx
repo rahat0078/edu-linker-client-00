@@ -79,7 +79,7 @@ const Assignments = () => {
                                 onChange={e => setSearch(e.target.value)}
                                 type="text"
                                 placeholder="Search"
-                                className="input input-bordered w-full pr-10"
+                                className="input input-bordered w-full pr-[40px]"
                             />
                             <button className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-500">
                                 <FaSearch />
