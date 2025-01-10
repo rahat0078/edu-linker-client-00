@@ -36,16 +36,14 @@ const router = createBrowserRouter([
             },
             {
                 path: '/assignmentDetails/:id',
-                element: <PrivateRoute>
-                    <AssignmentDetails></AssignmentDetails>
-                </PrivateRoute>
+                element: <AssignmentDetails/>
             },
             {
                 path: '/update/:id',
                 element: <PrivateRoute>
                     <Update></Update>
                 </PrivateRoute>,
-                loader: ({params}) => fetch(`https://edu-linker-server.vercel.app/assignment/${params.id}`, {withCredentials: true})
+                loader: ({ params }) => fetch(`https://edu-linker-server.vercel.app/assignment/${params.id}`, { withCredentials: true })
             },
             {
                 path: '/createAssignment',

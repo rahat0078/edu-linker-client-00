@@ -31,21 +31,21 @@ const Faq = () => {
     ];
 
     return (
-        <div className="mb-16">
+        <div className="mb-16 px-6 md:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
                 <div>
                     <Lottie animationData={faq} loop={true} />
                 </div>
                 <div className='flex flex-col gap-3 lg:col-span-2'>
                     <div className='flex justify-center items-center gap-3'>
-                        <h2 className="py-6 text-4xl font-semibold text-center ">Frequently Asked Questions</h2>
+                        <h2 className="py-6 text-2xl md:text-4xl font-semibold text-center ">Frequently Asked Questions</h2>
                         <img className='w-8 -mt-8' src={faqimg} alt="" />
                     </div>
                     {
                         faqItems.map((faq, index) =>
                             <div key={index} className="collapse collapse-arrow bg-base-200 w-full">
                                 <input type="radio" name="my-accordion-2" />
-                                <div className="collapse-title text-xl font-medium">{faq.question}</div>
+                                <div className="collapse-title text-lg md:text-xl font-medium">{faq.question}</div>
                                 <div className="collapse-content">
                                     <p className='text-gray-500'>{faq.answer}</p>
                                 </div>

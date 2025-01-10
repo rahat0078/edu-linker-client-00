@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 import loadingSpinner from '../assets/loading.gif';
@@ -13,6 +13,12 @@ const AssignmentDetails = () => {
     const { user } = useAuth()
     const title = assignment?.title;
     const marks = assignment?.marks;
+    const navigate = useNavigate()
+    const location = useLocation()
+
+
+
+    console.log(user);
 
 
 
@@ -27,7 +33,12 @@ const AssignmentDetails = () => {
 
 
     const handleTakeAssignment = () => {
-        document.getElementById('my_modal_5').showModal()
+        if (user == null) {
+            return navigate('/signIn', { state: { from: location.pathname } })
+        }
+        else {
+            document.getElementById('my_modal_5').showModal()
+        }
     }
 
     const handleSubmit = (e) => {
