@@ -25,7 +25,7 @@ const AssignmentSectionHome = () => {
                 {assignments.slice(0,8).map((assignment) => (
                     <div
                         key={assignment._id}
-                        className="card card-compact bg-base-100 shadow-lg hover:scale-105 duration-300 ease-in-out cursor-pointer"
+                        className="card card-compact bg-base-100 shadow-lg"
                     >
 
                         <figure className="h-60 overflow-hidden">

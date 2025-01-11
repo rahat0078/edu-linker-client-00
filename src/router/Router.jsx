@@ -11,6 +11,8 @@ import PrivateRoute from "../private/PrivateRoute";
 import AssignmentDetails from "../pages/AssignmentDetails";
 import Update from "../components/Update";
 import Error from "../error/Error";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import ContactUs from "../pages/contact/ContactUs";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
             {
                 path: '/assignmentDetails/:id',
                 element: <AssignmentDetails/>
+            },
+            {
+                path: '/aboutUs',
+                element: <AboutUs/>
+            },
+            {
+                path: '/contactUs',
+                element: <ContactUs/>
             },
             {
                 path: '/update/:id',

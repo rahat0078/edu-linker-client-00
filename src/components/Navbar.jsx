@@ -57,6 +57,23 @@ const Navbar = () => {
                 Pending assignments
             </NavLink> : ""
         }
+        <NavLink to="/aboutUs"
+            className={({ isActive }) =>
+                isActive
+                    ? "text-[#FD7441] text-lg font-semibold  p-2 rounded"
+                    : "p-2 text-lg font-semibold hover:text-[#FD7441] hover:underline"
+            }>
+            About Us
+        </NavLink>
+        <NavLink to="/contactUs"
+            className={({ isActive }) =>
+                isActive
+                    ? "text-[#FD7441] text-lg font-semibold  p-2 rounded"
+                    : "p-2 text-lg font-semibold hover:text-[#FD7441] hover:underline"
+            }>
+            Contact
+        </NavLink>
+
     </>;
 
     return (
