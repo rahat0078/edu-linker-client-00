@@ -110,10 +110,7 @@ const Assignments = () => {
             </div>
             <div className='mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 md:px-0'>
                 {assignments.map((assignment) => (
-                    <div
-                        key={assignment._id}
-                        className="card card-compact bg-base-100 shadow-lg hover:scale-105 duration-300 ease-in-out cursor-pointer"
-                    >
+                    <div key={assignment._id} className="card card-compact bg-base-100 shadow-lg hover:scale-105 duration-300 ease-in-out cursor-pointer">
 
                         <figure className="h-60 overflow-hidden">
                             <img
