@@ -25,7 +25,7 @@ An interactive web application for collaborative group study, where friends can 
 - **Client:** Hosted on Firebase.
 - **Server:** Hosted on Vercel.
 
-#### Backend code: [https://github.com/rahat0078/edu-linker-server-00]
+#### Backend code: https://github.com/rahat0078/edu-linker-server-00
 
 ## Author
 Developed by [Ruhul Amin Rahat].
