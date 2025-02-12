@@ -92,7 +92,7 @@ const PendingAssignments = () => {
                                     {/* Button to "Give Mark" */}
                                     <button
                                         onClick={() => handlegivemark(assignment)}
-                                        className="btn btn-sm bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg flex items-center gap-2"
+                                        className="btn btn-sm bg-[#4662B2] text-white hover:bg-[#4663b29a]"
                                     >
                                         <FaStar />
                                         Give Mark
@@ -121,19 +121,19 @@ const PendingAssignments = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-gray-600 font-semibold text-[16px]">Give Mark</span>
+                                    <span className="label-text text-gray-500 font-semibold text-[16px]">Give Mark</span>
                                 </label>
                                 <input type="number" name="mark" placeholder="Give Mark" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-gray-600 font-semibold text-[16px]">feedback </span>
+                                    <span className="label-text text-gray-500 font-semibold text-[16px]">feedback </span>
                                 </label>
                                 <input type="text" name="feedback" placeholder="Give Mark" className="input input-bordered" required />
                             </div>
                             <div className='flex justify-center mt-6'>
-                                <input type='submit' value="Give" className='btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg ' />
+                                <input type='submit' value="Give" className='btn text-[16px] bg-[#4662B2] text-white' />
                                 <button onClick={() => document.getElementById("my_modal_6").close()} className="btn ml-4">Close</button>
                             </div>
                         </form>

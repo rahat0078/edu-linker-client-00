@@ -41,7 +41,7 @@ function Features() {
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-lg font-semibold text-black mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-gray-500">{feature.description}</p>
             </div>
           ))}
         </div>

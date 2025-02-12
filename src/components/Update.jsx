@@ -59,14 +59,14 @@ const Update = () => {
     return (
         <div className="container mx-auto mb-16">
             <form onSubmit={handleUpdate} className="max-w-lg mx-auto  shadow-md rounded-lg p-8 space-y-2 border-t-2 border-t-[#4662B2]">
-                <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
+                <h2 className="text-2xl font-bold mb-6 text-center text-gray-500">
                     Update Assignment
                 </h2>
 
                 {/* TITLE  */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-gray-600 font-semibold text-[16px]">Title</span>
+                        <span className="label-text text-gray-500 font-semibold text-[16px]">Title</span>
                     </label>
                     <input type="title" name="title" placeholder="Enter assignment title" defaultValue={title} className="input input-bordered" required />
                 </div>
@@ -74,7 +74,7 @@ const Update = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-gray-600 font-semibold text-[16px]">Description</span>
+                        <span className="label-text text-gray-500 font-semibold text-[16px]">Description</span>
                     </label>
                     <textarea name="description" defaultValue={description} required className="textarea textarea-bordered" placeholder="Enter assignment description"></textarea>
                 </div>
@@ -82,7 +82,7 @@ const Update = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-gray-600 font-semibold text-[16px]">Marks</span>
+                        <span className="label-text text-gray-500 font-semibold text-[16px]">Marks</span>
                     </label>
                     <input type="number" name="marks" defaultValue={marks} placeholder="Enter total marks" className="input input-bordered" required />
                 </div>
@@ -90,7 +90,7 @@ const Update = () => {
                 {/* Thumbnail URL */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-gray-600 font-semibold text-[16px]">Thumbnail Image URL</span>
+                        <span className="label-text text-gray-500 font-semibold text-[16px]">Thumbnail Image URL</span>
                     </label>
                     <input type="text" name="thumbnail" defaultValue={thumbnail} placeholder="Enter image URL" className="input input-bordered" required />
                 </div>
@@ -99,7 +99,7 @@ const Update = () => {
                 <div className="flex gap-4 justify-between pb-4">
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text text-gray-600 font-semibold text-[16px]">Difficulty Level</span>
+                            <span className="label-text text-gray-500 font-semibold text-[16px]">Difficulty Level</span>
                         </label>
                         <select name="difficulty" defaultValue={difficulty} required className="select select-bordered w-full">
                             <option value="easy">Easy</option>
@@ -112,7 +112,7 @@ const Update = () => {
                     <div className="form-control w-full">
                         <label className="label">
 
-                            <span className="label-text text-gray-600 font-semibold text-[16px]">Due Date</span>
+                            <span className="label-text text-gray-500 font-semibold text-[16px]">Due Date</span>
                         </label>
                         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="border text-start py-3 pl-3 rounded-lg " />
 

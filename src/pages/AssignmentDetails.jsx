@@ -126,14 +126,14 @@ const AssignmentDetails = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-gray-600 font-semibold text-[16px]">Google Docs Link</span>
+                                <span className="label-text text-gray-500 font-semibold text-[16px]">Google Docs Link</span>
                             </label>
                             <input type="text" name="googleDocsLink" placeholder="Google Docs Link" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-gray-600 font-semibold text-[16px]">Quick Note</span>
+                                <span className="label-text text-gray-500 font-semibold text-[16px]">Quick Note</span>
                             </label>
                             <textarea name="quickNote" required className="textarea textarea-bordered" placeholder="Drop quickNote"></textarea>
                         </div>

@@ -6,7 +6,7 @@ const ContInfo = () => {
             <section className="py-16">
                 <div className="container mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-6">Contact Information</h2>
-                    <p className="text-center text-gray-600 mb-10">
+                    <p className="text-center text-gray-500 mb-10">
                         We’re here to help! Reach out to us through any of the channels below.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center lg:grid-cols-4 gap-6">
@@ -27,7 +27,7 @@ const ContInfo = () => {
                         <div className="card shadow-lg p-6 text-center border border-gray-300">
                             <FaPhone className="text-[#4662B2] text-4xl mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-                            <p className="text-gray-600 mb-4">+123-456-7890</p>
+                            <p className="text-gray-500 mb-4">+123-456-7890</p>
                             <a
                                 href="tel:+1234567890"
                                 className="btn btn-sm bg-[#4662B2] hover:bg-[#4662B2] text-white hover:text-black"
@@ -41,7 +41,7 @@ const ContInfo = () => {
                             <div className=" p-6 text-center">
                                 <FaMapMarkerAlt className="text-[#4662B2] text-4xl mx-auto mb-4" />
                                 <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
-                                <p className="text-gray-600 mb-4">
+                                <p className="text-gray-500 mb-4">
                                     123 Edulinker Lane, Dhaka, Bangladesh
                                 </p>
                                 <a

@@ -39,7 +39,7 @@ const Footer = () => {
                         </nav>
                     </div>
                     <div className=''>
-                        <h4 className='text-lg text-gray-600 font-semibold text-start pb-4'>Drop a message</h4>
+                        <h4 className='text-lg text-gray-500 font-semibold text-start pb-4'>Drop a message</h4>
                         <form onSubmit={handleSend} className='flex'>
                             <input type="text" name='message' placeholder="Type here" className="input rounded-r-none w-full max-w-xs" />
                             <input type='submit' value='Send' className='btn bg-[#4662B2] rounded-r-lg text-[16px] hover:bg-[#4662B2] text-white rounded-none font-semibold' />

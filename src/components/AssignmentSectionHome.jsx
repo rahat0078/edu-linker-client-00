@@ -54,15 +54,15 @@ const AssignmentSectionHome = () => {
                             </h2>
 
 
-                            <p className="text-gray-600 text-sm mb-2 line-clamp-2">
+                            <p className="text-gray-500 text-sm mb-2 line-clamp-2">
                                 {assignment.description.slice(0, 80)}....
                             </p>
 
 
-                            <p className="font-semibold text-gray-700">
+                            <p className="font-semibold text-gray-500">
                                 Marks: <span className="text-primary">{assignment.marks}</span>
                             </p>
-                            <p className="font-semibold text-gray-700">
+                            <p className="font-semibold text-gray-500">
                                 Author: <span className='text-gray-500'>{assignment.createdBy.email}</span>
                             </p>
 
