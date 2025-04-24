@@ -89,7 +89,7 @@ const AssignmentDetails = () => {
         <div className='container mx-auto'>
             {assignment ? (
                 <div>
-                    <div className="p-6 bg-white shadow-xl rounded-lg w-full max-w-2xl mx-auto my-12 border">
+                    <div className="p-6 bg-base-100 shadow-md rounded-lg w-full max-w-2xl mx-auto my-12">
                         <h1 className="text-xl font-bold mb-4">{assignment.title}</h1>
                         <img
                             src={assignment.thumbnail}

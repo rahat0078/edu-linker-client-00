@@ -33,7 +33,7 @@ const MyAttemptedjAssignments = () => {
 
     return (
         <div className="container mx-auto my-12">
-            <h2 className="text-3xl font-bold text-center mb-6 text-gray-500">My Assignments</h2>
+            <h2 className="text-3xl font-bold text-center mb-6">My Assignments</h2>
             {
                 assignments.length > 0 ?
                     <div className="overflow-x-auto">
@@ -49,7 +49,7 @@ const MyAttemptedjAssignments = () => {
                             </thead>
                             <tbody>
                                 {assignments.map((assignment, index) => (
-                                    <tr key={index} className="hover:bg-gray-100">
+                                    <tr key={index} className="hover:bg-base-200">
                                         <td className="p-3">{assignment?.assignmentDetails[0].title}</td>
                                         <td className="p-3">
                                             {assignment?.status === "completed" ? (
@@ -76,7 +76,7 @@ const MyAttemptedjAssignments = () => {
                     : <>
                     <div className="min-h-[60vh] flex flex-col items-center gap-8">
                         <h3 className="text-4xl text-center font-bold text-orange-400">You didn't attempted any assignments</h3>
-                        <Link to="/assignments" className="btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold">Take assignment</Link>
+                        <Link to="/assignments" className="button-primary">Take assignment</Link>
                     </div>
                     </>
             }
