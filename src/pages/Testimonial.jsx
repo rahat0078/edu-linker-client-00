@@ -1,6 +1,20 @@
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { useState } from 'react';
+
+
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Pagination, Autoplay } from 'swiper/modules';
+
+
 
 const Testimonial = () => {
 
@@ -32,37 +46,80 @@ const Testimonial = () => {
             rating: 5,
             reviewDate: "26/07/2024",
         },
-
+        {
+            _id: "4",
+            name: "Rafiul Islam",
+            image: "https://static.vecteezy.com/system/resources/thumbnails/026/911/382/small_2x/happy-student-boy-with-books-isolated-free-photo.jpg",
+            feedback: "Edulinker helped me stay organized and never miss a deadline.",
+            rating: 4,
+            reviewDate: "04/10/2024",
+        },
+        {
+            _id: "5",
+            name: "Jannatul Ferdous",
+            image: "https://media.istockphoto.com/id/1272815911/photo/young-indian-female-university-student-stock-photo.jpg?s=612x612&w=0&k=20&c=Iwdc08GR3pw8_Qg3_nabNJUQYTo52EU3dvW4tsth1tE=",
+            feedback: "Thanks to Edulinker, I submitted all my assignments on time this semester!",
+            rating: 4,
+            reviewDate: "18/06/2025",
+        },
     ]
 
 
     return (
         <section className='my-12'>
             <h2 className='text-3xl text-center py-12 font-bold'>What Our Students Say</h2>
-            <div className="grid grid-cols-3 gap-6">
+
             {/* card  */}
-            {
-                testmonialData?.map((data) => <div key={data._id} className="p-6 bg-base-200 shadow-lg rounded-lg space-y-4">
-                    <div className="flex gap-6 items-center">
-                        <div className="avatar">
-                            <div className="w-24 rounded-full">
-                                <img className='object-cover' alt={data?.name} src={data?.image} />
+
+
+
+            <Swiper
+                spaceBetween={30}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                modules={[Pagination, Autoplay]}
+                className="mySwiper"
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                }}
+            >
+                {
+                    testmonialData?.map((data) => (
+                        <SwiperSlide
+                            key={data._id}
+                            className="flex flex-col justify-between p-6 bg-base-200 shadow-lg rounded-lg space-y-2 h-full"
+                        >
+                            <div className="flex gap-6 items-center">
+                                <div className="avatar">
+                                    <div className="w-24 rounded-full">
+                                        <img className='object-cover' alt={data?.name} src={data?.image} />
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-semibold">{data?.name}</h3>
                             </div>
-                        </div>
-                        <h3 className="text-xl font-semibold">{data?.name}</h3>
-                    </div>
-                    <p>{data?.feedback}</p>
-                    <div className="flex justify-between">
-                        <div>
-                            <Rating style={{ maxWidth: 120 }} value={data?.rating} />
-                        </div>
-                        <p className="text-semibold">
-                            Reviewed on: {data?.reviewDate}
-                        </p>
-                    </div>
-                </div>)
-            }
-            </div>
+                            <p>{data?.feedback}</p>
+                            <div className="flex justify-between items-center">
+                                <Rating style={{ maxWidth: 120 }} value={data?.rating} readOnly />
+                                <p className="font-semibold">Reviewed on: {data?.reviewDate}</p>
+                            </div>
+                        </SwiperSlide>
+                    ))
+                }
+            </Swiper>
+
+
+
         </section>
     );
 };
