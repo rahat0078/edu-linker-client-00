@@ -79,7 +79,7 @@ const Testimonial = () => {
                 autoplay={{ delay: 2000, disableOnInteraction: false }}
                 modules={[Pagination, Autoplay]}
                 className="mySwiper"
-                breakpoints={{
+                breakpoints={{ 
                     320: {
                         slidesPerView: 1,
                         spaceBetween: 10,
