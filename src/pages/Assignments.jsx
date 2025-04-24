@@ -36,7 +36,7 @@ const Assignments = () => {
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
+            confirmButtonColor: "#115ca1",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
@@ -152,13 +152,13 @@ const Assignments = () => {
 
 
                             <div className="flex justify-between mt-4">
-                                <Link to={`/assignmentDetails/${assignment._id}`} className="btn btn-sm btn-outline text-blue-600">
+                                <Link to={`/assignmentDetails/${assignment._id}`} className="button-secondary flex items-center text-blue-600">
                                     <FaEye className="mr-2" /> View
                                 </Link>
-                                <Link to={`/update/${assignment._id}`} className="btn btn-sm btn-outline text-yellow-500">
+                                <Link to={`/update/${assignment._id}`} className="button-secondary flex items-center text-yellow-500">
                                     <FaEdit className="mr-2" /> Update
                                 </Link>
-                                <button onClick={() => handleDelete(assignment._id)} className="btn btn-sm btn-outline text-red-600">
+                                <button onClick={() => handleDelete(assignment._id)} className="button-secondary flex items-center text-red-600">
                                     <FaTrashAlt className="mr-2" /> Delete
                                 </button>
                             </div>
