@@ -16,7 +16,7 @@ const AssignmentSectionHome = () => {
     }, []);
 
     return (
-        <div className="section-design">
+        <section className="section-design">
             <h3 className="title">Unlock Your Learning Potential</h3>
             <p className="description">Explore and complete your assignments effortlessly with our curated tasks. Dive into engaging challenges designed to boost your knowledge and skills!</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
@@ -28,8 +28,8 @@ const AssignmentSectionHome = () => {
 
                         <figure className="h-60 overflow-hidden">
                             <img
-                                src={assignment.thumbnail}
-                                alt="thumbnail"
+                                src={assignment?.thumbnail}
+                                alt={assignment.title}
                                 className="w-full h-full object-cover"
                             />
                         </figure>
@@ -40,33 +40,33 @@ const AssignmentSectionHome = () => {
                             <h2 className="card-title flex justify-between items-center">
                                 {assignment.title}
                                 <span
-                                    className={`badge ${assignment.difficulty === "easy"
+                                    className={`badge ${assignment?.difficulty === "easy"
                                         ? "badge-success"
                                         : assignment.difficulty === "medium"
                                             ? "badge-warning"
                                             : "badge-error"
                                         }`}
                                 >
-                                    {assignment.difficulty}
+                                    {assignment?.difficulty}
                                 </span>
                             </h2>
 
 
                             <p className="text-gray-500 text-sm mb-2 line-clamp-2">
-                                {assignment.description.slice(0, 80)}....
+                                {assignment?.description.slice(0, 80)}....
                             </p>
 
 
                             <p className="font-semibold text-gray-500">
-                                Marks: <span className="text-primary">{assignment.marks}</span>
+                                Marks: <span className="text-primary">{assignment?.marks}</span>
                             </p>
                             <p className="font-semibold text-gray-500">
-                                Author: <span className='text-gray-500'>{assignment.createdBy.email}</span>
+                                Author: <span className='text-gray-500'>{assignment?.createdBy.email}</span>
                             </p>
 
 
                             <div className="flex justify-end">
-                                <Link to={`/assignmentDetails/${assignment._id}`} className="button-secondary flex justify-center items-center gap-2">
+                                <Link to={`/assignmentDetails/${assignment?._id}`} className="button-secondary flex justify-center items-center gap-2">
                                     <FaEye /> See More
                                 </Link>
                             </div>
@@ -75,7 +75,7 @@ const AssignmentSectionHome = () => {
                 ))}
             </div>
             <button onClick={() => navigate('/assignments')} className="flex items-center gap-1 button-secondary"> See All Assignments <FaLongArrowAltRight /></button>
-        </div>
+        </section>
     );
 };
 

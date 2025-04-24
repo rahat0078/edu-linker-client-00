@@ -57,7 +57,7 @@ const CreateAssignment = () => {
   };
 
   return (
-    <div className="container mx-auto mb-12 section-design">
+    <section className="container mx-auto mb-12 section-design">
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-md rounded-lg p-8 space-y-2 border-t-2 border-t-[#4662B2]">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-500">
           Create Assignment
@@ -127,7 +127,7 @@ const CreateAssignment = () => {
           Create Assignment
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 

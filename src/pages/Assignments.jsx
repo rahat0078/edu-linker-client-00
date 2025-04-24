@@ -79,10 +79,10 @@ const Assignments = () => {
 
 
     return (
-        <div className='container mx-auto section-design'>
+        <main className='container mx-auto section-design'>
             <h2 className='title'>Collaborate and Learn Together</h2>
             <p style={{ paddingBottom: "16px" }} className='description border-b'>Explore all assignments created by your peers. Stay on top of your learning journey by engaging with tasks, completing challenges, and reviewing the work of others. Collaborate, grow, and excel as a community!</p>
-            <div>
+            <section>
                 <div className='my-8 flex justify-center items-center flex-wrap gap-4'>
 
                     <div className="relative w-full max-w-xs">
@@ -105,7 +105,7 @@ const Assignments = () => {
                     </select>
 
                 </div>
-            </div>
+            </section>
             <div className='mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 md:px-0'>
                 {assignments.map((assignment) => (
                     <div key={assignment._id} className="card card-compact bg-base-100 shadow-lg hover:scale-105 duration-300 ease-in-out cursor-pointer">
@@ -113,7 +113,7 @@ const Assignments = () => {
                         <figure className="h-60 overflow-hidden">
                             <img
                                 src={assignment.thumbnail}
-                                alt="thumbnail"
+                                alt={assignment.title}
                                 className="w-full h-full object-cover"
                             />
                         </figure>
@@ -164,7 +164,7 @@ const Assignments = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </main>
     );
 };
 

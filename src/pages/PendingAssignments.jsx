@@ -67,7 +67,7 @@ const PendingAssignments = () => {
     }
 
     return (
-        <div className="container mx-auto section-design mb-12">
+        <section className="container mx-auto section-design mb-12">
             <h2 className="title mb-6">Submitted Assignments</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full table-zebra">
@@ -140,7 +140,7 @@ const PendingAssignments = () => {
                     </div>
                 </dialog>
             </div>
-        </div>
+        </section>
     );
 };
 

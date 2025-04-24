@@ -3,12 +3,10 @@ import Hero from "./Hero";
 
 const ContactUs = () => {
     return (
-        <div>
+        <main>
             <Hero/>
             <ContInfo/>
-
-
-        </div>
+        </main>
     );
 };
 

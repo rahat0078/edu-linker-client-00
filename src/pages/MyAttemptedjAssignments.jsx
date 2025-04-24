@@ -32,11 +32,11 @@ const MyAttemptedjAssignments = () => {
     }
 
     return (
-        <div className="container mx-auto my-12">
+        <main className="container mx-auto my-12">
             <h2 className="title mb-6">My Assignments</h2>
             {
                 assignments.length > 0 ?
-                    <div className="overflow-x-auto">
+                    <section className="overflow-x-auto">
                         <table className="table w-full border-collapse">
                             <thead>
                                 <tr className="bg-[#4662B2] text-white">
@@ -72,16 +72,16 @@ const MyAttemptedjAssignments = () => {
                                 ))}
                             </tbody>
                         </table>
-                    </div> 
+                    </section> 
                     : <>
-                    <div className="min-h-[60vh] flex flex-col items-center gap-8">
+                    <section className="min-h-[60vh] flex flex-col items-center gap-8">
                         <h3 className="text-4xl text-center font-bold text-orange-400">You didn't attempted any assignments</h3>
                         <Link to="/assignments" className="button-primary">Take assignment</Link>
-                    </div>
+                    </section>
                     </>
             }
 
-        </div>
+        </main>
     );
 };
 

@@ -31,12 +31,12 @@ const Faq = () => {
     ];
 
     return (
-        <div className="section-design">
+        <section className="section-design">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
                 <div>
                     <Lottie animationData={faq} loop={true} />
                 </div>
-                <div className='flex flex-col gap-3 lg:col-span-2'>
+                <aside className='flex flex-col gap-3 lg:col-span-2'>
                     <div className='flex justify-center items-center gap-3'>
                         <h2 className="title pb-8">Frequently Asked Questions</h2>
                         <img className='w-8 -mt-8' src={faqimg} alt="" />
@@ -51,9 +51,9 @@ const Faq = () => {
                                 </div>
                             </div>)
                     }
-                </div>
+                </aside>
             </div>
-        </div>
+        </section>
     );
 }
 

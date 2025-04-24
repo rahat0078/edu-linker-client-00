@@ -31,7 +31,7 @@ function Features() {
   return (
     <section id="features" className="section-design">
       <div className="container mx-auto ">
-        <h2 className="title">Features</h2>
+        <h3 className="title">Features</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-4 pt-8
         ">
           {features.map((feature, index) => (

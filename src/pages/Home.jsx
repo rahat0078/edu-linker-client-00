@@ -7,14 +7,14 @@ import Testimonial from "./Testimonial";
 
 const Home = () => {
     return (
-        <div className="container mx-auto">
+        <main className="container mx-auto">
             <Banner></Banner>
             <AssignmentSectionHome/>
             <Features></Features>
             <Testimonial/>
             <Faq></Faq>
             <SupportTeam/>
-        </div>
+        </main>
     );
 };
 

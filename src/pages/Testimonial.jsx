@@ -67,7 +67,7 @@ const Testimonial = () => {
 
     return (
         <section className='section-design'>
-            <h2 className='title pb-8'>What Our Students Say</h2>
+            <h3 className='title pb-8'>What Our Students Say</h3>
 
             {/* card  */}
 

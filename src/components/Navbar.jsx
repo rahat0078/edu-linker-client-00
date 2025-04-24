@@ -77,7 +77,7 @@ const Navbar = () => {
     </>;
 
     return (
-        <div className="bg-base-100 sticky top-0 z-50 ">
+        <nav className="bg-base-100 sticky top-0 z-50 ">
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <Link to="/" className="cursor-pointer flex items-center gap-2  rounded border">
@@ -153,7 +153,7 @@ const Navbar = () => {
 
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 

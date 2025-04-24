@@ -93,7 +93,7 @@ const AssignmentDetails = () => {
                         <h1 className="text-xl font-bold mb-4">{assignment.title}</h1>
                         <img
                             src={assignment.thumbnail}
-                            alt="Thumbnail"
+                            alt={assignment.title}
                             className="w-full h-64 object-cover rounded"
                         />
                         <p className="mt-4">{assignment.description}</p>

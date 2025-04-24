@@ -31,7 +31,7 @@ const SupportTeam = () => {
     return (
         <section className="section-design mb-12">
             <div className="container mx-auto">
-                <h2 className="title">Meet Our Support Team</h2>
+                <h3 className="title">Meet Our Support Team</h3>
                 <p className="description">
                     Our dedicated team is here to ensure your experience with Edulinker is smooth and productive.
                 </p>
@@ -44,10 +44,10 @@ const SupportTeam = () => {
                                     alt={member.name}
                                     className="w-24 h-24 rounded-full border-2 border-primary"
                                 />
-                                <div className="ml-4">
+                                <aside className="ml-4">
                                     <h3 className="text-xl font-semibold">{member.name}</h3>
                                     <p className="text-sm text-gray-500">{member.role}</p>
-                                </div>
+                                </aside>
                             </div>
                             <p className="text-lg mb-4">{member.bio}</p>
 
