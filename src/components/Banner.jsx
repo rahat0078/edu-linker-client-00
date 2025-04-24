@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import groupwork from '../assets/lottie/groupwork.json';
 import { Link } from "react-router-dom";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Banner = () => {
     return (
@@ -14,9 +15,10 @@ const Banner = () => {
                     <h2 className="py-4 text-lg text-gray-500">
                         Revolutionize group studies with seamless task management and peer grading.
                     </h2>
-                    <div className="flex gap-4">
-                        <Link to='/assignments' className="btn btn-outline border-[#4662B2] text-[16px] hover:bg-[#4662B2] font-semibold rounded-lg">Get Started for Free</Link>
-                        <a href="#features" className="btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg">Learn More</a>
+                    <div className="flex items-center gap-4">
+                        <Link to='/assignments' className="button-secondary text-lg flex items-center gap-1">Get Started for Free <FaLongArrowAltRight />
+                        </Link>
+                        <a href="#features" className="button-primary text-lg">Learn More</a>
                     </div>
                 </div>
             </div>

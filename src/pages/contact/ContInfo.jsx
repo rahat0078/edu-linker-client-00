@@ -17,7 +17,7 @@ const ContInfo = () => {
                             <p className="text-gray-500 mb-4">support@edulinker.com</p>
                             <a
                                 href="mailto:support@edulinker.com"
-                                className="btn btn-sm bg-[#4662B2] hover:bg-[#4662B2] text-white hover:text-black"
+                                className="button-primary"
                             >
                                 Send an Email
                             </a>
@@ -30,7 +30,7 @@ const ContInfo = () => {
                             <p className="text-gray-500 mb-4">+123-456-7890</p>
                             <a
                                 href="tel:+1234567890"
-                                className="btn btn-sm bg-[#4662B2] hover:bg-[#4662B2] text-white hover:text-black"
+                                className="button-primary"
                             >
                                 Call Now
                             </a>
@@ -44,13 +44,15 @@ const ContInfo = () => {
                                 <p className="text-gray-500 mb-4">
                                     123 Edulinker Lane, Dhaka, Bangladesh
                                 </p>
+                                <button className="button-primary w-full">
                                 <a
                                     target="_blank"
                                     href="https://maps.app.goo.gl/W5ebxHmcapnJYbwP7"
-                                    className="btn btn-sm bg-[#4662B2] hover:bg-[#4662B2] text-white hover:text-black w-full"
+                                    
                                 >
                                     View on Map
                                 </a>
+                                </button>
                             </div>
                             <div>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.97311706415!2d90.3371167693569!3d23.7808185444538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1736578741368!5m2!1sen!2sbd" className="h-full w-full"></iframe>

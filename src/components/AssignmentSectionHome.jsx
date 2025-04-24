@@ -1,19 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { FaArrowRight, FaEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaEye, FaLongArrowAltRight } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 
 const AssignmentSectionHome = () => {
 
     const [assignments, setAssignments] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('https://edu-linker-server.vercel.app/assignments')
             .then(res => {
                 setAssignments(res.data)
             })
-    }, [])
-
+    }, []);
 
     return (
         <div className="mt-16 px-6 md:px-0">
@@ -67,8 +67,8 @@ const AssignmentSectionHome = () => {
                             </p>
 
 
-                            <div className="flex justify-end gap-2 mt-4">
-                                <Link to={`/assignmentDetails/${assignment._id}`} className="btn btn-sm btn-outline text-blue-600">
+                            <div className="flex justify-end">
+                                <Link to={`/assignmentDetails/${assignment._id}`} className="button-secondary flex justify-center items-center gap-2">
                                     <FaEye /> See More
                                 </Link>
                             </div>
@@ -76,7 +76,7 @@ const AssignmentSectionHome = () => {
                     </div>
                 ))}
             </div>
-            <Link to='/assignments' className="flex items-center w-52 btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold"> See All Assignments <FaArrowRight/></Link>
+            <button onClick={() => navigate('/assignments')}  className="flex items-center gap-1 button-secondary"> See All Assignments <FaLongArrowAltRight /></button>
         </div>
     );
 };

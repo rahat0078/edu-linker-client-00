@@ -122,7 +122,7 @@ const CreateAssignment = () => {
 
         <button
           type="submit"
-          className="btn btn-primary w-full mt-4 bg-[#4662B2] hover:bg-[#FD7441] text-white font-semibold"
+          className="button-primary w-full"
         >
           Create Assignment
         </button>

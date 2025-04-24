@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { FcGoogle } from "react-icons/fc";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -72,13 +73,13 @@ const SignIn = () => {
                         </p>
                     </div>
                     <div className="form-control mt-6">
-                        <button to="/auth/login" className="btn bg-[#4662B2] border-none rounded-full text-white hover:bg-[#4662B2] text-lg">Login</button>
+                        <button to="/auth/login" style={{borderRadius: "9999px"}} className="button-primary">Login</button>
                     </div>
                     <div className="divider">or</div>
                     <div>
-                        <p onClick={handleGoogleLogin} className="flex items-center gap-4 text-[#FD7E14] hover:text-[#4662B2] border p-3 w-full justify-center cursor-pointer rounded-full">
-                            <FaGoogle></FaGoogle>
-                            <span className="text-xl font-bold ">Login With Google</span>
+                        <p onClick={handleGoogleLogin} className="border rounded-full flex justify-center items-center py-2 px-4 gap-3 hover:cursor-pointer">
+                        <FcGoogle className="text-2xl "/>
+                            <span className="text-[#115ca1] font-bold text-lg">Sign in With Google</span>
                         </p>
                     </div>
                     <p className="pt-2 flex justify-end">Don&apos;t have an account?<Link state={location.state} to="/signUp" className="text-[#4662B2] underline">SignUp </Link> </p>

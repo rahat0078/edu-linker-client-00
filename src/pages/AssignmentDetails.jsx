@@ -110,7 +110,7 @@ const AssignmentDetails = () => {
                             <strong>Created By: </strong>{assignment.createdBy.name} | {assignment.createdBy.email}
                         </p>
                         <div className='flex justify-end'>
-                            <button onClick={handleTakeAssignment} className='btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg '>Take assignment</button>
+                            <button onClick={handleTakeAssignment} className='button-primary'>Take assignment</button>
                         </div>
                     </div>
                 </div>
@@ -138,8 +138,8 @@ const AssignmentDetails = () => {
                             <textarea name="quickNote" required className="textarea textarea-bordered" placeholder="Drop quickNote"></textarea>
                         </div>
                         <div className='flex justify-center mt-6'>
-                            <input type='submit' value="Take" className='btn text-[16px] bg-[#4662B2] text-white hover:text-black font-semibold rounded-lg ' />
-                            <p onClick={() => document.getElementById("my_modal_5").close()} className="btn ml-4">Close</p>
+                            <input type='submit' value="Take" className='button-primary' />
+                            <p onClick={() => document.getElementById("my_modal_5").close()} className="button-secondary ml-4">Close</p>
                         </div>
                     </form>
                 </div>

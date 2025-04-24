@@ -92,7 +92,7 @@ const PendingAssignments = () => {
                                     {/* Button to "Give Mark" */}
                                     <button
                                         onClick={() => handlegivemark(assignment)}
-                                        className="btn btn-sm bg-[#4662B2] text-white hover:bg-[#4663b29a]"
+                                        className="button-primary flex items-center gap-1"
                                     >
                                         <FaStar />
                                         Give Mark
@@ -133,8 +133,8 @@ const PendingAssignments = () => {
                                 <input type="text" name="feedback" placeholder="Give Mark" className="input input-bordered" required />
                             </div>
                             <div className='flex justify-center mt-6'>
-                                <input type='submit' value="Give" className='btn text-[16px] bg-[#4662B2] text-white' />
-                                <button onClick={() => document.getElementById("my_modal_6").close()} className="btn ml-4">Close</button>
+                                <input type='submit' value="Give" className='button-primary' />
+                                <button onClick={() => document.getElementById("my_modal_6").close()} className="button-secondary ml-4">Close</button>
                             </div>
                         </form>
                     </div>

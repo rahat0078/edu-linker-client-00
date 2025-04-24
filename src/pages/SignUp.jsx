@@ -97,7 +97,7 @@ const SignUp = () => {
 
                     </div>
                     <div className="form-control mt-6">
-                        <button to="/auth/login" className="btn bg-[#4662B2] border-none rounded-full text-white hover:bg-[#4662B2] text-lg">SignUp</button>
+                        <button to="/auth/login" style={{borderRadius: "9999px"}} className="button-primary">SignUp</button>
                     </div>
                     <div className="divider">or</div>
 
