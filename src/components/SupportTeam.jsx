@@ -29,10 +29,10 @@ const SupportTeam = () => {
     ];
 
     return (
-        <section className="pb-16">
+        <section className="section-design mb-12">
             <div className="container mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-8">Meet Our Support Team</h2>
-                <p className="text-center text-gray-500 mb-10">
+                <h2 className="title">Meet Our Support Team</h2>
+                <p className="description">
                     Our dedicated team is here to ensure your experience with Edulinker is smooth and productive.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -42,7 +42,7 @@ const SupportTeam = () => {
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-16 h-16 rounded-full border-2 border-primary"
+                                    className="w-24 h-24 rounded-full border-2 border-primary"
                                 />
                                 <div className="ml-4">
                                     <h3 className="text-xl font-semibold">{member.name}</h3>

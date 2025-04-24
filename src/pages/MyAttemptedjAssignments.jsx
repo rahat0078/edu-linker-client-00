@@ -33,7 +33,7 @@ const MyAttemptedjAssignments = () => {
 
     return (
         <div className="container mx-auto my-12">
-            <h2 className="text-3xl font-bold text-center mb-6">My Assignments</h2>
+            <h2 className="title mb-6">My Assignments</h2>
             {
                 assignments.length > 0 ?
                     <div className="overflow-x-auto">

@@ -77,10 +77,10 @@ const Navbar = () => {
     </>;
 
     return (
-        <div className="bg-base-100 sticky top-0 z-50">
-            <div className="navbar container mx-auto py-4">
+        <div className="bg-base-100 sticky top-0 z-50 ">
+            <div className="navbar container mx-auto">
                 <div className="navbar-start">
-                    <Link to="/" className="cursor-pointer flex items-center gap-2 p-2 rounded border">
+                    <Link to="/" className="cursor-pointer flex items-center gap-2  rounded border">
                         <img className="sm:w-10 w-6 h-full" src={logo} alt="" />
                         <span className="md:text-xl text-[18px] font-bold">EduLinker</span>
                     </Link>

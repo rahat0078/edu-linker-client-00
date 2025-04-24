@@ -66,8 +66,8 @@ const Testimonial = () => {
 
 
     return (
-        <section className='my-12'>
-            <h2 className='text-3xl text-center py-12 font-bold'>What Our Students Say</h2>
+        <section className='section-design'>
+            <h2 className='title pb-8'>What Our Students Say</h2>
 
             {/* card  */}
 

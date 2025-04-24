@@ -7,5 +7,16 @@
 }
 
 .button-secondary {
-  @apply bg-[#2895fb34]  font-semibold px-4 py-2 rounded-md hover:bg-[#115ca1] hover:text-white hover:border-none transition duration-300 ease-in-out;
+  @apply bg-[#2895fb34]  font-semibold px-4 py-2 rounded-md hover:bg-[#115ca1] hover:text-white hover:border-none transition duration-200;
+}
+
+.section-design {
+  @apply mt-12 px-4 md:px-0;
+}
+.title {
+  @apply text-2xl md:text-3xl font-semibold text-center;
+}
+
+.description {
+  @apply text-gray-500 max-w-2xl mx-auto pt-4 pb-8 text-center;
 }

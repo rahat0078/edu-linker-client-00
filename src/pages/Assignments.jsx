@@ -79,33 +79,31 @@ const Assignments = () => {
 
 
     return (
-        <div className='container mx-auto'>
-            <div className='text-center my-12'>
-                <h2 className='text-3xl font-semibold'>Collaborate and Learn Together</h2>
-                <p className='text-gray-500 w-full max-w-3xl mx-auto py-6 border-b'>Explore all assignments created by your peers. Stay on top of your learning journey by engaging with tasks, completing challenges, and reviewing the work of others. Collaborate, grow, and excel as a community!</p>
-                <div>
-                    <div className='my-8 flex justify-center items-center flex-wrap gap-4'>
+        <div className='container mx-auto section-design'>
+            <h2 className='title'>Collaborate and Learn Together</h2>
+            <p style={{ paddingBottom: "16px" }} className='description border-b'>Explore all assignments created by your peers. Stay on top of your learning journey by engaging with tasks, completing challenges, and reviewing the work of others. Collaborate, grow, and excel as a community!</p>
+            <div>
+                <div className='my-8 flex justify-center items-center flex-wrap gap-4'>
 
-                        <div className="relative w-full max-w-xs">
-                            <input
-                                onChange={e => setSearch(e.target.value)}
-                                type="text"
-                                placeholder="Search"
-                                className="input input-bordered w-full pr-[40px]"
-                            />
-                            <button className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-500">
-                                <FaSearch />
-                            </button>
-                        </div>
-
-                        <select onChange={e => setFilter(e.target.value)} placeholder="Filter" className="select select-bordered w-full max-w-xs">
-                            <option>All</option>
-                            <option>easy</option>
-                            <option>medium</option>
-                            <option>hard</option>
-                        </select>
-
+                    <div className="relative w-full max-w-xs">
+                        <input
+                            onChange={e => setSearch(e.target.value)}
+                            type="text"
+                            placeholder="Search"
+                            className="input input-bordered w-full pr-[40px]"
+                        />
+                        <button className="absolute top-1/2 right-2 -translate-y-1/2 text-gray-500">
+                            <FaSearch />
+                        </button>
                     </div>
+
+                    <select onChange={e => setFilter(e.target.value)} placeholder="Filter" className="select select-bordered w-full max-w-xs">
+                        <option>All</option>
+                        <option>easy</option>
+                        <option>medium</option>
+                        <option>hard</option>
+                    </select>
+
                 </div>
             </div>
             <div className='mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 md:px-0'>
@@ -153,13 +151,13 @@ const Assignments = () => {
 
                             <div className="flex justify-between mt-4">
                                 <Link to={`/assignmentDetails/${assignment._id}`} className="button-secondary flex items-center text-blue-600">
-                                    <FaEye className="mr-2" /> View
+                                    <FaEye className="mr-1" /> View
                                 </Link>
                                 <Link to={`/update/${assignment._id}`} className="button-secondary flex items-center text-yellow-500">
-                                    <FaEdit className="mr-2" /> Update
+                                    <FaEdit className="mr-1" /> Update
                                 </Link>
                                 <button onClick={() => handleDelete(assignment._id)} className="button-secondary flex items-center text-red-600">
-                                    <FaTrashAlt className="mr-2" /> Delete
+                                    <FaTrashAlt className="mr-1" /> Delete
                                 </button>
                             </div>
                         </div>

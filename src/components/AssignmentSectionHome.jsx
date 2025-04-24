@@ -16,13 +16,11 @@ const AssignmentSectionHome = () => {
     }, []);
 
     return (
-        <div className="mt-16 px-6 md:px-0">
-            <div className="text-center">
-                <h3 className="text-2xl md:text-4xl font-semibold">Unlock Your Learning Potential</h3>
-                <p className="text-gray-500 max-w-2xl mx-auto pt-4">Explore and complete your assignments effortlessly with our curated tasks. Dive into engaging challenges designed to boost your knowledge and skills!</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
-                {assignments.slice(0,8).map((assignment) => (
+        <div className="section-design">
+            <h3 className="title">Unlock Your Learning Potential</h3>
+            <p className="description">Explore and complete your assignments effortlessly with our curated tasks. Dive into engaging challenges designed to boost your knowledge and skills!</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+                {assignments.slice(0, 8).map((assignment) => (
                     <div
                         key={assignment._id}
                         className="card card-compact bg-base-100 shadow-lg"
@@ -76,7 +74,7 @@ const AssignmentSectionHome = () => {
                     </div>
                 ))}
             </div>
-            <button onClick={() => navigate('/assignments')}  className="flex items-center gap-1 button-secondary"> See All Assignments <FaLongArrowAltRight /></button>
+            <button onClick={() => navigate('/assignments')} className="flex items-center gap-1 button-secondary"> See All Assignments <FaLongArrowAltRight /></button>
         </div>
     );
 };

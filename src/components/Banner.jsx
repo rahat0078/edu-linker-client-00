@@ -11,14 +11,14 @@ const Banner = () => {
                     <Lottie animationData={groupwork} loop={true} />
                 </div>
                 <div>
-                    <h1 className="text-3xl md:text-5xl font-bold leading-snug">Collaborate, Learn, and Grow Together!</h1>
-                    <h2 className="py-4 text-lg text-gray-500">
-                        Revolutionize group studies with seamless task management and peer grading.
-                    </h2>
+                    <h1 className="text-3xl md:text-5xl font-bold">Collaborate, Learn, and Grow Together!</h1>
+                    <p className="py-4 text-lg text-gray-500">
+                    Revolutionize your group studies with effortless task coordination, real-time collaboration, and peer-based grading — all in one platform.
+                    </p>
                     <div className="flex items-center gap-4">
-                        <Link to='/assignments' className="button-secondary text-lg flex items-center gap-1">Get Started for Free <FaLongArrowAltRight />
+                        <Link to='/assignments' className="button-secondary flex items-center gap-1">Get Started for Free <FaLongArrowAltRight />
                         </Link>
-                        <a href="#features" className="button-primary text-lg">Learn More</a>
+                        <a href="#features" className="button-primary">Learn More</a>
                     </div>
                 </div>
             </div>

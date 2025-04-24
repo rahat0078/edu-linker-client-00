@@ -67,8 +67,8 @@ const PendingAssignments = () => {
     }
 
     return (
-        <div className="container mx-auto my-12">
-            <h2 className="text-3xl font-semibold text-center mb-6">Submitted Assignments</h2>
+        <div className="container mx-auto section-design mb-12">
+            <h2 className="title mb-6">Submitted Assignments</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full table-zebra">
                     {/* Table Header */}

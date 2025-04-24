@@ -29,15 +29,15 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-16 ">
-      <div className="container mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-semibold mb-10">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6
+    <section id="features" className="section-design">
+      <div className="container mx-auto ">
+        <h2 className="title">Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-4 pt-8
         ">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`p-6 ${feature.backgroundColor} shadow-lg hover:scale-105 duration-300 ease-in-out rounded-xl`}
+              className={`md:p-6 p-4 ${feature.backgroundColor} shadow-lg hover:scale-105 duration-300 ease-in-out rounded-xl`}
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
