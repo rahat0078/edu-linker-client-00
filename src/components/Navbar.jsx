@@ -80,7 +80,7 @@ const Navbar = () => {
         <nav className="bg-base-100 sticky top-0 z-50 ">
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
-                    <Link to="/" className="cursor-pointer flex items-center gap-2  rounded border">
+                    <Link to="/" className="cursor-pointer flex items-center  rounded">
                         <img className="sm:w-10 w-6 h-full" src={logo} alt="" />
                         <span className="md:text-xl text-[18px] font-bold">EduLinker</span>
                     </Link>
@@ -135,7 +135,7 @@ const Navbar = () => {
                             </>
                             :
                             <>
-                                <Link to="/signIn" className="btn btn-sm md:btn-md bg-[#FD7441] hover:bg-[#4662B2] text-white font-semibold">SignIn</Link>
+                                <Link to="/signIn" className="button-primary">SignIn</Link>
                             </>
                     }
 

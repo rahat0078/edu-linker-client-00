@@ -5,7 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Banner = () => {
     return (
-        <header className="hero bg-base-200 py-8 lg:py-12 rounded-lg">
+        <header className="hero bg-base-200 py-6 lg:py-10 rounded-lg">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="ml-4 max-w-xs md:max-w-sm lg:max-w-lg">
                     <Lottie animationData={groupwork} loop={true} />
